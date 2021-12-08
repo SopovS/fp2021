@@ -1,5 +1,12 @@
---Завдання 1
---через n=2 значення ’z’: "1234590"⇒ "12z34z59z0".
+--Лабораторна робота №1
+--студента групи кн-31
+--Сопова Сергія
+--Варіант 9
+
+--Мета
+--Набути досвiду визначення та використання функцiй вищого порядку.
+
+--Завдання 1. Вставити у список через кожнi n елементiв вказане значення, напр. через n=2 значення ’z’: "1234590"⇒ "12z34z59z0".
 --а)
 insert :: Int -> a -> [a] -> [a]
 insert n y xs = countdown n xs where
@@ -12,8 +19,9 @@ insertAtN :: Int -> a -> [a] -> [a]
 insertAtN n y  = intercalate [y] . groups n
   where
     groups n = takeWhile (not.null) . unfoldr (Just . splitAt n)
+    
 
---Завдання 2
+--Завдання 2. Знайти перше просте число в указаному дiапазонi.
 --а)
 nPrimes x y =  head [z | z <- [x..y], isPrime z]
 isPrime :: (Integral a) => a -> Bool
